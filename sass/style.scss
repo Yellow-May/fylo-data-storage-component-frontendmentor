@@ -1,0 +1,167 @@
+@import "base";
+@import "animations";
+
+body {
+  width: $Desktop;
+  height: 850px;
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  background: $Very-Dark-Blue url(./../images/bg-desktop.png) no-repeat
+    bottom/contain;
+
+  font-family: $Font-stack;
+  font-size: $Font-size;
+}
+
+main {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    background: $Dark-Blue;
+    padding: 2.5rem 9rem 2.5rem 2.5rem;
+    border-radius: 0.5rem;
+    border-top-right-radius: 6rem;
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+
+      .shell {
+        height: 3rem;
+        width: 3rem;
+        background: $Very-Dark-Blue;
+        border-radius: 0.5rem;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+
+        object {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  .main-body {
+    width: 35rem;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+
+    background: $Dark-Blue;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+      color: $Grayish-Blue;
+
+      span {
+        font-weight: 700;
+        color: $Pale-Blue;
+      }
+    }
+
+    .progress-bar {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .progress-meter {
+        width: 100%;
+        height: 1rem;
+        background: $Very-Dark-Blue;
+        border-radius: 1rem;
+        box-shadow: inset -0.1rem -0.1rem 0.1rem #999;
+
+        .progress {
+          height: calc(100% - 0.1rem);
+          width: 0%;
+          opacity: 0;
+          border-radius: inherit;
+          background: $Gradient;
+          position: relative;
+
+          animation: progress 2s linear 1s forwards;
+
+          &::before {
+            content: "";
+            position: absolute;
+            right: 0.1rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: inherit;
+            background: #fff;
+            box-shadow: 0 0 0.1rem $Dark-Blue, 0 0 0.2rem $Dark-Blue,
+              0 0 0.3rem $Dark-Blue, 0 0 0.4rem $Dark-Blue,
+              0 0 0.5rem $Dark-Blue;
+          }
+        }
+      }
+
+      .identifiers {
+        display: flex;
+        justify-content: space-between;
+        color: $Pale-Blue;
+      }
+    }
+
+    .floater {
+      position: absolute;
+      top: -50%;
+      transform: translateY(50%);
+      right: 2.5rem;
+
+      background: #fff;
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1.5rem;
+        height: 2.2rem;
+        bottom: -1.6rem;
+        right: 0;
+        background: inherit;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2.2rem;
+        height: 1.5rem;
+        bottom: -2.05rem;
+        right: 0.2rem;
+        background: $Dark-Blue;
+        transform: rotate(45deg);
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 40%;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@import "mobile";

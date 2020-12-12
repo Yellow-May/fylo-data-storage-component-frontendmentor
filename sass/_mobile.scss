@@ -1,0 +1,52 @@
+@media (max-width: 375px) {
+  body {
+    width: $Mobile;
+    height: 42rem;
+
+    background: url(./../images/bg-mobile.png) no-repeat;
+  }
+
+  main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    header {
+      gap: 1.5rem;
+      width: 20rem;
+
+      background: $Dark-Blue;
+      padding: 2.5rem 5rem 2.5rem 2.5rem;
+
+      nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+    }
+
+    .main-body {
+      width: 20rem;
+      padding: 2.5rem 1rem;
+
+      p {
+        font-size: 120%;
+      }
+
+      .floater {
+        position: absolute;
+        top: unset;
+        bottom: 0rem;
+        transform: translate(50%, 50%);
+        right: 50%;
+
+        padding: 1rem 2rem;
+
+        &::before,
+        &::after {
+          transform: scale(0);
+        }
+      }
+    }
+  }
+}
